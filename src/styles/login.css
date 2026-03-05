@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f4f8;
+}
+
+.login-card {
+  width: 320px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ff6600;
+}
+
+.lang-btn {
+  border: none;
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  border-bottom: 2px solid #ff6600;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.login-btn:hover {
+  background: #e65c00;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ff6600;
+  background: white;
+  color: #ff6600;
+  border-radius: 5px;
+  cursor: pointer;
+}
