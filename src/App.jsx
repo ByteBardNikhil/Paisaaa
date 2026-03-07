@@ -4,13 +4,15 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 
 function App() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={isLoggedIn ? <Home /> : <Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
       </Routes>
+      :
     </HashRouter>
   );
 }

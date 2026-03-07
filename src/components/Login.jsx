@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/login.css";
+
 const text = {
   en: {
     login: "Log in",
@@ -28,6 +30,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -41,6 +45,7 @@ export default function Login() {
 
     if (user) {
       localStorage.setItem("isLoggedIn", true);
+      localStorage.setItem("currentUser", JSON.stringify(user));
       navigate("/home");
     } else alert("Invalid credentials");
   };
@@ -93,13 +98,28 @@ export default function Login() {
           />
         )}
 
-        <input
-          className="input"
-          type="password"
-          placeholder={text[lang].password}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div style={{ position: "relative" }}>
+          <input
+            className="input"
+            type={showPassword ? "text" : "password"}
+            placeholder={text[lang].password}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <span
+            style={{
+              position: "absolute",
+              right: "12px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              cursor: "pointer",
+            }}
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
 
         <div className="remember">
           <input type="checkbox" />
